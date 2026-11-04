@@ -1,0 +1,11 @@
+workflows:
+  localvpn-debug:
+    name: Local VPN Android APK (debug)
+    max_build_duration: 60
+    instance_type: linux_x2
+    scripts:
+      - name: Build debug APK
+        script: |
+          gradle assembleDebug
+    artifacts:
+      - app/build/outputs/apk/debug/*.apk
